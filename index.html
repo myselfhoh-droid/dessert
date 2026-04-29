@@ -18,6 +18,8 @@
             --white: #FFFFFF;
             --shadow: 0 4px 20px rgba(139, 94, 60, 0.1);
             --shadow-hover: 0 8px 30px rgba(139, 94, 60, 0.15);
+            --success: #27ae60;
+            --danger: #e74c3c;
         }
 
         * {
@@ -37,7 +39,6 @@
             font-family: 'Playfair Display', serif;
         }
 
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -82,17 +83,18 @@
             cursor: pointer;
             font-size: 1.3rem;
             color: var(--primary);
+            padding: 0.5rem;
         }
 
         .cart-count {
             position: absolute;
-            top: -8px;
-            right: -8px;
+            top: -2px;
+            right: -2px;
             background: var(--primary);
             color: white;
             font-size: 0.7rem;
-            width: 18px;
-            height: 18px;
+            width: 20px;
+            height: 20px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -100,10 +102,9 @@
             font-weight: 600;
         }
 
-        /* Hero Section */
         .hero {
             margin-top: 70px;
-            padding: 4rem 5%;
+            padding: 5rem 5%;
             text-align: center;
             background: linear-gradient(135deg, var(--bg) 0%, var(--accent) 100%);
         }
@@ -180,7 +181,24 @@
             color: white;
         }
 
-        /* Menu Section */
+        .btn-danger {
+            background: var(--danger);
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #c0392b;
+        }
+
+        .btn-success {
+            background: var(--success);
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #219a52;
+        }
+
         .section {
             padding: 4rem 5%;
             max-width: 1400px;
@@ -274,160 +292,9 @@
             background: var(--secondary);
         }
 
-        /* Order Modal */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-            padding: 1rem;
-        }
-
-        .modal-overlay.active {
-            display: flex;
-        }
-
-        .modal {
-            background: var(--white);
-            border-radius: 20px;
-            max-width: 500px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-            animation: slideUp 0.3s ease;
-        }
-
-        .modal-header {
-            padding: 1.5rem;
-            border-bottom: 1px solid var(--accent);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .modal-header h2 {
-            color: var(--primary);
-        }
-
-        .close-btn {
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--text-light);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.3s;
-        }
-
-        .close-btn:hover {
-            background: var(--bg);
-        }
-
-        .modal-body {
-            padding: 1.5rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: var(--text);
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 0.8rem 1rem;
-            border: 2px solid var(--accent);
-            border-radius: 12px;
-            font-family: inherit;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-
-        .quantity-selector {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin: 1rem 0;
-        }
-
-        .qty-btn {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: 2px solid var(--primary);
-            background: white;
-            color: var(--primary);
-            font-size: 1.2rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-        }
-
-        .qty-btn:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        .qty-display {
-            font-size: 1.2rem;
-            font-weight: 600;
-            min-width: 40px;
-            text-align: center;
-        }
-
-        .order-summary {
-            background: var(--bg);
-            padding: 1rem;
-            border-radius: 12px;
-            margin: 1rem 0;
-        }
-
-        .summary-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 0.5rem;
-        }
-
-        .summary-total {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--primary);
-            border-top: 2px solid var(--accent);
-            padding-top: 0.5rem;
-            margin-top: 0.5rem;
-        }
-
-        /* Cart Sidebar */
         .cart-sidebar {
             position: fixed;
-            right: -400px;
+            right: -420px;
             top: 0;
             width: 400px;
             max-width: 100%;
@@ -446,10 +313,11 @@
 
         .cart-header {
             padding: 1.5rem;
-            border-bottom: 1px solid var(--accent);
+            border-bottom: 2px solid var(--accent);
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background: var(--bg);
         }
 
         .cart-items {
@@ -461,10 +329,11 @@
         .cart-item {
             display: flex;
             gap: 1rem;
-            padding: 1rem;
+            padding: 1.2rem;
             background: var(--bg);
-            border-radius: 12px;
+            border-radius: 15px;
             margin-bottom: 1rem;
+            border: 1px solid var(--accent);
         }
 
         .cart-item-info {
@@ -474,52 +343,250 @@
         .cart-item-title {
             font-weight: 600;
             margin-bottom: 0.3rem;
+            color: var(--text);
+            font-size: 1.1rem;
+        }
+
+        .cart-item-details {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
         }
 
         .cart-item-price {
             color: var(--primary);
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .cart-item-qty {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
         }
 
         .cart-footer {
             padding: 1.5rem;
-            border-top: 1px solid var(--accent);
+            border-top: 2px solid var(--accent);
             background: var(--bg);
         }
 
         .empty-cart {
             text-align: center;
-            padding: 3rem 1rem;
+            padding: 4rem 2rem;
             color: var(--text-light);
         }
 
         .empty-cart i {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
             color: var(--accent);
+            display: block;
         }
 
-        /* Contact Bar */
-        .contact-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: var(--white);
-            padding: 1rem;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            z-index: 100;
+        .modal-overlay {
             display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            backdrop-filter: blur(5px);
         }
 
-        .contact-bar.visible {
+        .modal-overlay.active {
             display: flex;
         }
 
-        /* Animations */
+        .modal {
+            background: var(--white);
+            border-radius: 20px;
+            max-width: 500px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: slideUp 0.3s ease;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .modal-header {
+            padding: 1.5rem;
+            border-bottom: 2px solid var(--accent);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--bg);
+            border-radius: 20px 20px 0 0;
+        }
+
+        .modal-header h2 {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--text-light);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .close-btn:hover {
+            background: var(--accent);
+            color: var(--text);
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            border: 2px solid var(--accent);
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s;
+            background: var(--bg);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: white;
+            box-shadow: 0 0 0 3px rgba(139, 94, 60, 0.1);
+        }
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            justify-content: center;
+        }
+
+        .qty-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+            background: white;
+            color: var(--primary);
+            font-size: 1.3rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .qty-btn:hover {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .qty-display {
+            font-size: 1.4rem;
+            font-weight: 700;
+            min-width: 50px;
+            text-align: center;
+            color: var(--text);
+        }
+
+        .order-summary {
+            background: linear-gradient(135deg, var(--bg), var(--accent));
+            padding: 1.2rem;
+            border-radius: 15px;
+            margin: 1.5rem 0;
+            border: 2px solid var(--secondary);
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.7rem;
+            font-size: 1rem;
+        }
+
+        .summary-total {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            border-top: 2px solid var(--primary);
+            padding-top: 0.8rem;
+            margin-top: 0.8rem;
+        }
+
+        .payment-options {
+            display: grid;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .payment-option {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            border: 2px solid var(--accent);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: white;
+        }
+
+        .payment-option:hover {
+            border-color: var(--primary);
+            background: var(--bg);
+        }
+
+        .payment-option.selected {
+            border-color: var(--primary);
+            background: var(--bg);
+            box-shadow: 0 0 0 3px rgba(139, 94, 60, 0.1);
+        }
+
+        .payment-option i {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -542,29 +609,9 @@
             }
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .menu-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .nav-links {
-                display: none;
-            }
-            
-            .cart-sidebar {
-                width: 100%;
-            }
-        }
-
-        /* Toast Notification */
         .toast {
             position: fixed;
-            bottom: 100px;
+            bottom: 30px;
             left: 50%;
             transform: translateX(-50%) translateY(100px);
             background: var(--text);
@@ -573,8 +620,12 @@
             border-radius: 50px;
             font-weight: 500;
             opacity: 0;
-            transition: all 0.3s;
+            transition: all 0.4s;
             z-index: 3000;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .toast.show {
@@ -582,13 +633,19 @@
             transform: translateX(-50%) translateY(0);
         }
 
-        /* Footer */
+        .toast.success {
+            background: var(--success);
+        }
+
+        .toast.error {
+            background: var(--danger);
+        }
+
         footer {
             background: var(--text);
             color: var(--accent);
             padding: 3rem 5%;
             text-align: center;
-            margin-bottom: 0;
         }
 
         .footer-content {
@@ -612,11 +669,57 @@
         .social-links a:hover {
             color: var(--secondary);
         }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .cart-sidebar {
+                width: 100%;
+                right: -100%;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1999;
+        }
+
+        .overlay.active {
+            display: block;
+        }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
+    <div class="overlay" id="overlay" onclick="toggleCart()"></div>
+
     <nav>
         <a href="#" class="logo">🧁 Sweet Cravings</a>
         <div class="nav-links">
@@ -628,9 +731,12 @@
                 <span class="cart-count" id="cartCount">0</span>
             </div>
         </div>
+        <div class="cart-icon" style="display:none;" id="mobileCart" onclick="toggleCart()">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="cart-count" id="cartCountMobile">0</span>
+        </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
         <h1>Handcrafted With Love</h1>
         <p>Indulge in our artisan desserts made fresh daily. Order online for delivery or pickup, or simply give us a call!</p>
@@ -638,21 +744,17 @@
             <a href="#menu" class="btn btn-primary">
                 <i class="fas fa-utensils"></i> Order Now
             </a>
-            <a href="https://wa.me/60123456789" class="btn btn-whatsapp" target="_blank">
+            <a href="https://wa.me/601167470624" class="btn btn-whatsapp" target="_blank">
                 <i class="fab fa-whatsapp"></i> WhatsApp Order
             </a>
         </div>
     </section>
 
-    <!-- Menu Section -->
     <section class="section" id="menu">
         <h2 class="section-title">Our Signature Desserts</h2>
-        <div class="menu-grid" id="menuGrid">
-            <!-- Items will be populated by JavaScript -->
-        </div>
+        <div class="menu-grid" id="menuGrid"></div>
     </section>
 
-    <!-- About Section -->
     <section class="section" id="about" style="background: linear-gradient(135deg, var(--accent) 0%, var(--bg) 100%); border-radius: 30px; margin: 2rem auto;">
         <div style="text-align: center; max-width: 800px; margin: 0 auto;">
             <h2 class="section-title">Why Choose Us?</h2>
@@ -680,7 +782,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="section" id="contact">
         <h2 class="section-title">Get In Touch</h2>
         <div style="max-width: 600px; margin: 0 auto; text-align: center;">
@@ -688,11 +789,11 @@
                 Prefer to order by phone? No problem! Reach out to us directly.
             </p>
             <div style="display: flex; flex-direction: column; gap: 1rem; align-items: center;">
-                <a href="tel:+60123456789" class="btn btn-outline" style="width: 100%; max-width: 300px;">
-                    <i class="fas fa-phone"></i> Call Us: +60 12-345 6789
+                <a href="tel:+601167470624" class="btn btn-outline" style="width: 100%; max-width: 300px;">
+                    <i class="fas fa-phone"></i> Call Us: +60 11-6747 0624
                 </a>
-                <a href="https://wa.me/60123456789" class="btn btn-whatsapp" style="width: 100%; max-width: 300px;" target="_blank">
-                    <i class="fab fa-whatsapp"></i> WhatsApp: +60 12-345 6789
+                <a href="https://wa.me/601167470624" class="btn btn-whatsapp" style="width: 100%; max-width: 300px;" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp: +60 11-6747 0624
                 </a>
             </div>
             <div style="margin-top: 3rem; padding: 2rem; background: var(--bg); border-radius: 20px;">
@@ -705,7 +806,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <h2 style="font-family: 'Playfair Display', serif; margin-bottom: 1rem;">Sweet Cravings</h2>
@@ -719,75 +819,103 @@
         </div>
     </footer>
 
-    <!-- Order Modal -->
-    <div class="modal-overlay" id="orderModal">
+    <!-- Add to Cart Modal -->
+    <div class="modal-overlay" id="addModal">
+        <div class="modal" style="max-width: 400px;">
+            <div class="modal-header">
+                <h2>Add to Cart</h2>
+                <button class="close-btn" onclick="closeAddModal()">&times;</button>
+            </div>
+            <div class="modal-body" style="text-align: center;">
+                <div id="addItemEmoji" style="font-size: 4rem; margin-bottom: 1rem;"></div>
+                <h3 id="addItemName" style="color: var(--primary); margin-bottom: 0.5rem; font-size: 1.5rem;"></h3>
+                <p id="addItemPrice" style="color: var(--text-light); margin-bottom: 1.5rem; font-size: 1.2rem; font-weight: 600;"></p>
+                
+                <div class="quantity-selector" style="justify-content: center; margin: 1.5rem 0;">
+                    <button class="qty-btn" onclick="changeAddQty(-1)">-</button>
+                    <span class="qty-display" id="addQtyDisplay">1</span>
+                    <button class="qty-btn" onclick="changeAddQty(1)">+</button>
+                </div>
+
+                <button class="btn btn-primary" style="width: 100%;" onclick="confirmAddToCart()">
+                    <i class="fas fa-cart-plus"></i> Add to Cart
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal-overlay" id="checkoutModal">
         <div class="modal">
             <div class="modal-header">
-                <h2>Place Your Order</h2>
-                <button class="close-btn" onclick="closeModal()">&times;</button>
+                <h2><i class="fas fa-credit-card"></i> Checkout</h2>
+                <button class="close-btn" onclick="closeCheckoutModal()">&times;</button>
             </div>
             <div class="modal-body">
-                <div id="selectedItemDisplay" style="margin-bottom: 1.5rem; padding: 1rem; background: var(--bg); border-radius: 12px;">
-                    <h3 id="modalItemName" style="color: var(--primary); margin-bottom: 0.5rem;"></h3>
-                    <p id="modalItemPrice" style="color: var(--text-light);"></p>
-                </div>
-                
-                <div class="form-group">
-                    <label>Quantity</label>
-                    <div class="quantity-selector">
-                        <button class="qty-btn" onclick="changeQty(-1)">-</button>
-                        <span class="qty-display" id="qtyDisplay">1</span>
-                        <button class="qty-btn" onclick="changeQty(1)">+</button>
-                    </div>
-                </div>
+                <div id="checkoutItems" style="margin-bottom: 1.5rem;"></div>
 
                 <div class="order-summary">
-                    <div class="summary-row">
-                        <span>Item Price</span>
-                        <span id="summaryPrice">RM 0.00</span>
-                    </div>
-                    <div class="summary-row">
-                        <span>Quantity</span>
-                        <span id="summaryQty">1</span>
-                    </div>
                     <div class="summary-row summary-total">
-                        <span>Total</span>
-                        <span id="summaryTotal">RM 0.00</span>
+                        <span>Total Amount</span>
+                        <span id="checkoutTotal">RM 0.00</span>
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="customerName">Full Name *</label>
-                    <input type="text" id="customerName" placeholder="Enter your name" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="customerPhone">Phone Number *</label>
-                    <input type="tel" id="customerPhone" placeholder="e.g., 012-345 6789" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="customerAddress">Delivery Address *</label>
-                    <textarea id="customerAddress" rows="3" placeholder="Enter your full address" required></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="deliveryDate">Preferred Delivery Date</label>
-                    <input type="date" id="deliveryDate">
-                </div>
-
-                <div class="form-group">
-                    <label for="orderNotes">Special Requests (Optional)</label>
-                    <textarea id="orderNotes" rows="2" placeholder="Any allergies or special instructions..."></textarea>
-                </div>
-
-                <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;" onclick="submitOrder()">
-                    <i class="fas fa-paper-plane"></i> Confirm Order
-                </button>
+                <h3 style="margin: 1.5rem 0 1rem; color: var(--primary);">Delivery Details</h3>
                 
-                <p style="text-align: center; margin-top: 1rem; color: var(--text-light); font-size: 0.9rem;">
-                    or <a href="https://wa.me/60123456789" target="_blank" style="color: var(--primary);">order via WhatsApp instead</a>
-                </p>
+                <div class="form-group">
+                    <label for="coName">Full Name *</label>
+                    <input type="text" id="coName" placeholder="Your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="coPhone">Phone Number *</label>
+                    <input type="tel" id="coPhone" placeholder="e.g. 012-345 6789" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="coAddress">Delivery Address *</label>
+                    <textarea id="coAddress" rows="3" placeholder="Full delivery address" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="coDate">Delivery Date</label>
+                    <input type="date" id="coDate">
+                </div>
+
+                <div class="form-group">
+                    <label for="coNotes">Special Instructions (Optional)</label>
+                    <textarea id="coNotes" rows="2" placeholder="Allergies, delivery notes, etc."></textarea>
+                </div>
+
+                <h3 style="margin: 1.5rem 0 1rem; color: var(--primary);">Payment Method</h3>
+                <div class="payment-options">
+                    <div class="payment-option selected" onclick="selectPayment(this, 'bank')">
+                        <i class="fas fa-university"></i>
+                        <div>
+                            <div style="font-weight: 600;">Bank Transfer</div>
+                            <div style="font-size: 0.85rem; color: var(--text-light);">Manual verification</div>
+                        </div>
+                    </div>
+                    <div class="payment-option" onclick="selectPayment(this, 'cod')">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <div>
+                            <div style="font-weight: 600;">Cash on Delivery</div>
+                            <div style="font-size: 0.85rem; color: var(--text-light);">Pay when you receive</div>
+                        </div>
+                    </div>
+                    <div class="payment-option" onclick="selectPayment(this, 'whatsapp')">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <div style="font-weight: 600;">WhatsApp Payment</div>
+                            <div style="font-size: 0.85rem; color: var(--text-light);">Order via WhatsApp</div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn btn-success" style="width: 100%; margin-top: 1rem; font-size: 1.1rem;" onclick="processPayment()">
+                    <i class="fas fa-check-circle"></i> Place Order
+                </button>
             </div>
         </div>
     </div>
@@ -795,13 +923,14 @@
     <!-- Cart Sidebar -->
     <div class="cart-sidebar" id="cartSidebar">
         <div class="cart-header">
-            <h2>Your Cart</h2>
+            <h2><i class="fas fa-shopping-bag"></i> Your Cart</h2>
             <button class="close-btn" onclick="toggleCart()">&times;</button>
         </div>
         <div class="cart-items" id="cartItems">
             <div class="empty-cart">
                 <i class="fas fa-shopping-basket"></i>
                 <p>Your cart is empty</p>
+                <p style="font-size: 0.9rem; margin-top: 0.5rem;">Add some delicious desserts!</p>
             </div>
         </div>
         <div class="cart-footer" id="cartFooter" style="display: none;">
@@ -809,67 +938,32 @@
                 <span>Total</span>
                 <span id="cartTotal">RM 0.00</span>
             </div>
-            <button class="btn btn-primary" style="width: 100%;" onclick="checkout()">
-                <i class="fas fa-check"></i> Checkout
+            <button class="btn btn-primary" style="width: 100%; margin-bottom: 0.5rem;" onclick="openCheckout()">
+                <i class="fas fa-credit-card"></i> Proceed to Checkout
+            </button>
+            <button class="btn btn-whatsapp" style="width: 100%;" onclick="checkoutWhatsApp()">
+                <i class="fab fa-whatsapp"></i> Order via WhatsApp
             </button>
         </div>
     </div>
 
-    <!-- Toast -->
     <div class="toast" id="toast"></div>
 
     <script>
-        // Sample dessert data
         const desserts = [
-            {
-                id: 1,
-                name: "Classic Tiramisu",
-                price: 28.00,
-                desc: "Layers of coffee-soaked ladyfingers with mascarpone cream and cocoa dusting",
-                emoji: "🍰"
-            },
-            {
-                id: 2,
-                name: "Molten Lava Cake",
-                price: 22.00,
-                desc: "Warm chocolate cake with a gooey center, served with vanilla ice cream",
-                emoji: "🍫"
-            },
-            {
-                id: 3,
-                name: "Strawberry Cheesecake",
-                price: 25.00,
-                desc: "Creamy New York style cheesecake topped with fresh strawberry compote",
-                emoji: "🍓"
-            },
-            {
-                id: 4,
-                name: "Macaron Box (6pcs)",
-                price: 35.00,
-                desc: "Assorted French macarons in rose, pistachio, lavender, and salted caramel",
-                emoji: "🍬"
-            },
-            {
-                id: 5,
-                name: "Mango Sticky Rice",
-                price: 18.00,
-                desc: "Thai glutinous rice with sweet coconut cream and ripe mango slices",
-                emoji: "🥭"
-            },
-            {
-                id: 6,
-                name: "Red Velvet Cupcakes",
-                price: 15.00,
-                desc: "Moist red velvet cupcakes with cream cheese frosting (box of 2)",
-                emoji: "🧁"
-            }
+            { id: 1, name: "Classic Tiramisu", price: 28.00, desc: "Layers of coffee-soaked ladyfingers with mascarpone cream and cocoa dusting", emoji: "🍰" },
+            { id: 2, name: "Molten Lava Cake", price: 22.00, desc: "Warm chocolate cake with a gooey center, served with vanilla ice cream", emoji: "🍫" },
+            { id: 3, name: "Strawberry Cheesecake", price: 25.00, desc: "Creamy New York style cheesecake topped with fresh strawberry compote", emoji: "🍓" },
+            { id: 4, name: "Macaron Box (6pcs)", price: 35.00, desc: "Assorted French macarons in rose, pistachio, lavender, and salted caramel", emoji: "🍬" },
+            { id: 5, name: "Mango Sticky Rice", price: 18.00, desc: "Thai glutinous rice with sweet coconut cream and ripe mango slices", emoji: "🥭" },
+            { id: 6, name: "Red Velvet Cupcakes", price: 15.00, desc: "Moist red velvet cupcakes with cream cheese frosting (box of 2)", emoji: "🧁" }
         ];
 
         let cart = [];
-        let currentItem = null;
-        let currentQty = 1;
+        let addItemTemp = null;
+        let addQtyTemp = 1;
+        let selectedPayment = 'bank';
 
-        // Initialize
         document.addEventListener('DOMContentLoaded', () => {
             renderMenu();
             updateCartUI();
@@ -887,14 +981,14 @@
                         </div>
                         <p class="menu-desc">${item.desc}</p>
                         <div class="menu-actions">
-                            <button class="btn btn-primary btn-small" onclick="openOrderModal(${item.id})">
-                                <i class="fas fa-shopping-cart"></i> Add to Cart
+                            <button class="btn btn-primary btn-small" onclick="openAddModal(${item.id})">
+                                <i class="fas fa-cart-plus"></i> Add to Cart
                             </button>
-                            <a href="https://wa.me/60123456789?text=Hi! I want to order ${encodeURIComponent(item.name)}" 
-                               class="btn btn-whatsapp btn-small" target="_blank">
+                            <a href="https://wa.me/601167470624?text=Hi! I want to order ${encodeURIComponent(item.name)}" 
+                               class="btn btn-whatsapp btn-small" target="_blank" title="Order via WhatsApp">
                                 <i class="fab fa-whatsapp"></i>
                             </a>
-                            <a href="tel:+60123456789" class="btn btn-call btn-small">
+                            <a href="tel:+601167470624" class="btn btn-call btn-small" title="Call to Order">
                                 <i class="fas fa-phone"></i>
                             </a>
                         </div>
@@ -903,79 +997,69 @@
             `).join('');
         }
 
-        function openOrderModal(itemId) {
-            currentItem = desserts.find(d => d.id === itemId);
-            currentQty = 1;
+        function openAddModal(itemId) {
+            addItemTemp = desserts.find(d => d.id === itemId);
+            addQtyTemp = 1;
             
-            document.getElementById('modalItemName').textContent = currentItem.name;
-            document.getElementById('modalItemPrice').textContent = `RM ${currentItem.price.toFixed(2)} each`;
-            updateSummary();
+            document.getElementById('addItemEmoji').textContent = addItemTemp.emoji;
+            document.getElementById('addItemName').textContent = addItemTemp.name;
+            document.getElementById('addItemPrice').textContent = `RM ${addItemTemp.price.toFixed(2)}`;
+            document.getElementById('addQtyDisplay').textContent = '1';
             
-            document.getElementById('orderModal').classList.add('active');
+            document.getElementById('addModal').classList.add('active');
             document.body.style.overflow = 'hidden';
         }
 
-        function closeModal() {
-            document.getElementById('orderModal').classList.remove('active');
+        function closeAddModal() {
+            document.getElementById('addModal').classList.remove('active');
             document.body.style.overflow = '';
-            // Reset form
-            document.getElementById('customerName').value = '';
-            document.getElementById('customerPhone').value = '';
-            document.getElementById('customerAddress').value = '';
-            document.getElementById('deliveryDate').value = '';
-            document.getElementById('orderNotes').value = '';
+            addItemTemp = null;
         }
 
-        function changeQty(delta) {
-            currentQty = Math.max(1, currentQty + delta);
-            document.getElementById('qtyDisplay').textContent = currentQty;
-            updateSummary();
+        function changeAddQty(delta) {
+            addQtyTemp = Math.max(1, addQtyTemp + delta);
+            document.getElementById('addQtyDisplay').textContent = addQtyTemp;
         }
 
-        function updateSummary() {
-            const total = currentItem.price * currentQty;
-            document.getElementById('summaryPrice').textContent = `RM ${currentItem.price.toFixed(2)}`;
-            document.getElementById('summaryQty').textContent = currentQty;
-            document.getElementById('summaryTotal').textContent = `RM ${total.toFixed(2)}`;
-        }
-
-        function submitOrder() {
-            const name = document.getElementById('customerName').value;
-            const phone = document.getElementById('customerPhone').value;
-            const address = document.getElementById('customerAddress').value;
-
-            if (!name || !phone || !address) {
-                showToast('Please fill in all required fields!');
-                return;
-            }
-
-            const order = {
-                item: currentItem,
-                qty: currentQty,
-                customer: { name, phone, address },
-                date: document.getElementById('deliveryDate').value,
-                notes: document.getElementById('orderNotes').value,
-                total: currentItem.price * currentQty,
-                id: Date.now()
-            };
-
-            cart.push(order);
-            updateCartUI();
-            closeModal();
-            showToast('Added to cart successfully!');
+        function confirmAddToCart() {
+            if (!addItemTemp) return;
             
-            // Optional: Open WhatsApp with order summary
-            const message = `New Order!\n\nItem: ${currentItem.name}\nQty: ${currentQty}\nTotal: RM ${order.total.toFixed(2)}\n\nName: ${name}\nPhone: ${phone}\nAddress: ${address}`;
-            // window.open(`https://wa.me/60123456789?text=${encodeURIComponent(message)}`, '_blank');
+            const existing = cart.find(c => c.id === addItemTemp.id);
+            if (existing) {
+                existing.qty += addQtyTemp;
+            } else {
+                cart.push({
+                    id: addItemTemp.id,
+                    name: addItemTemp.name,
+                    price: addItemTemp.price,
+                    qty: addQtyTemp,
+                    emoji: addItemTemp.emoji
+                });
+            }
+            
+            updateCartUI();
+            closeAddModal();
+            showToast(`Added ${addQtyTemp}x ${addItemTemp.name} to cart!`, 'success');
+            
+            setTimeout(() => {
+                if (!document.getElementById('cartSidebar').classList.contains('active')) {
+                    toggleCart();
+                }
+            }, 500);
         }
 
         function toggleCart() {
-            document.getElementById('cartSidebar').classList.toggle('active');
+            const sidebar = document.getElementById('cartSidebar');
+            const overlay = document.getElementById('overlay');
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
         }
 
         function updateCartUI() {
             const count = cart.reduce((sum, item) => sum + item.qty, 0);
             document.getElementById('cartCount').textContent = count;
+            document.getElementById('cartCountMobile').textContent = count;
             
             const cartItems = document.getElementById('cartItems');
             const cartFooter = document.getElementById('cartFooter');
@@ -985,27 +1069,44 @@
                     <div class="empty-cart">
                         <i class="fas fa-shopping-basket"></i>
                         <p>Your cart is empty</p>
+                        <p style="font-size: 0.9rem; margin-top: 0.5rem;">Add some delicious desserts!</p>
                     </div>
                 `;
                 cartFooter.style.display = 'none';
             } else {
-                cartItems.innerHTML = cart.map((order, index) => `
+                cartItems.innerHTML = cart.map((item, index) => `
                     <div class="cart-item">
+                        <div style="font-size: 2.5rem;">${item.emoji}</div>
                         <div class="cart-item-info">
-                            <div class="cart-item-title">${order.item.name}</div>
-                            <div style="font-size: 0.9rem; color: var(--text-light);">Qty: ${order.qty}</div>
-                            <div class="cart-item-price">RM ${order.total.toFixed(2)}</div>
+                            <div class="cart-item-title">${item.name}</div>
+                            <div class="cart-item-details">
+                                <span class="cart-item-qty">${item.qty}x</span>
+                                RM ${item.price.toFixed(2)} each
+                            </div>
+                            <div class="cart-item-price">RM ${(item.price * item.qty).toFixed(2)}</div>
                         </div>
-                        <button class="close-btn" onclick="removeFromCart(${index})" style="color: #e74c3c;">
-                            <i class="fas fa-trash"></i>
-                        </button>
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            <button class="qty-btn" onclick="updateCartQty(${index}, 1)" style="width: 35px; height: 35px; font-size: 1rem;">+</button>
+                            <button class="qty-btn" onclick="updateCartQty(${index}, -1)" style="width: 35px; height: 35px; font-size: 1rem;">-</button>
+                            <button class="close-btn" onclick="removeFromCart(${index})" style="color: var(--danger); width: 35px; height: 35px;">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </div>
                     </div>
                 `).join('');
                 
-                const total = cart.reduce((sum, item) => sum + item.total, 0);
+                const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
                 document.getElementById('cartTotal').textContent = `RM ${total.toFixed(2)}`;
                 cartFooter.style.display = 'block';
             }
+        }
+
+        function updateCartQty(index, delta) {
+            cart[index].qty += delta;
+            if (cart[index].qty <= 0) {
+                cart.splice(index, 1);
+            }
+            updateCartUI();
         }
 
         function removeFromCart(index) {
@@ -1014,45 +1115,148 @@
             showToast('Item removed from cart');
         }
 
-        function checkout() {
-            if (cart.length === 0) return;
+        function openCheckout() {
+            if (cart.length === 0) {
+                showToast('Your cart is empty!', 'error');
+                return;
+            }
             
-            let message = "Hi! I want to place an order:\n\n";
+            const container = document.getElementById('checkoutItems');
+            container.innerHTML = cart.map(item => `
+                <div style="display: flex; justify-content: space-between; padding: 0.8rem; background: var(--bg); border-radius: 10px; margin-bottom: 0.5rem;">
+                    <div>
+                        <div style="font-weight: 600;">${item.emoji} ${item.name}</div>
+                        <div style="font-size: 0.85rem; color: var(--text-light);">${item.qty}x @ RM ${item.price.toFixed(2)}</div>
+                    </div>
+                    <div style="font-weight: 700; color: var(--primary);">RM ${(item.price * item.qty).toFixed(2)}</div>
+                </div>
+            `).join('');
+            
+            const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            document.getElementById('checkoutTotal').textContent = `RM ${total.toFixed(2)}`;
+            
+            toggleCart();
+            document.getElementById('checkoutModal').classList.add('active');
+        }
+
+        function closeCheckoutModal() {
+            document.getElementById('checkoutModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function selectPayment(el, method) {
+            document.querySelectorAll('.payment-option').forEach(opt => opt.classList.remove('selected'));
+            el.classList.add('selected');
+            selectedPayment = method;
+        }
+
+        function processPayment() {
+            const name = document.getElementById('coName').value.trim();
+            const phone = document.getElementById('coPhone').value.trim();
+            const address = document.getElementById('coAddress').value.trim();
+            
+            if (!name || !phone || !address) {
+                showToast('Please fill in all required fields!', 'error');
+                return;
+            }
+            
+            const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            const date = document.getElementById('coDate').value;
+            const notes = document.getElementById('coNotes').value;
+            
+            if (selectedPayment === 'whatsapp') {
+                checkoutWhatsApp();
+                closeCheckoutModal();
+                return;
+            }
+            
+            const orderId = 'SC' + Date.now().toString().slice(-6);
+            
+            let message = `🧁 *Sweet Cravings - Order Confirmation* 🧁\n\n`;
+            message += `*Order ID:* ${orderId}\n`;
+            message += `*Payment Method:* ${selectedPayment.toUpperCase()}\n\n`;
+            message += `*Customer:* ${name}\n`;
+            message += `*Phone:* ${phone}\n`;
+            message += `*Address:* ${address}\n`;
+            if (date) message += `*Delivery Date:* ${date}\n`;
+            if (notes) message += `*Notes:* ${notes}\n`;
+            message += `\n*Order Items:*\n`;
+            
+            cart.forEach(item => {
+                message += `• ${item.name} x${item.qty} = RM ${(item.price * item.qty).toFixed(2)}\n`;
+            });
+            
+            message += `\n*Total: RM ${total.toFixed(2)}*\n\n`;
+            
+            if (selectedPayment === 'bank') {
+                message += `*Bank Transfer Details:*\n`;
+                message += `Bank: Maybank\n`;
+                message += `Account: 1234567890\n`;
+                message += `Name: Sweet Cravings Sdn Bhd\n\n`;
+                message += `Please upload your receipt after payment.`;
+            } else if (selectedPayment === 'cod') {
+                message += `Please prepare exact change for the rider. Thank you!`;
+            }
+            
+            showToast('Order placed successfully!', 'success');
+            
+            setTimeout(() => {
+                window.open(`https://wa.me/601167470624?text=${encodeURIComponent(message)}`, '_blank');
+                cart = [];
+                updateCartUI();
+                closeCheckoutModal();
+            }, 1500);
+        }
+
+        function checkoutWhatsApp() {
+            if (cart.length === 0) {
+                showToast('Your cart is empty!', 'error');
+                return;
+            }
+            
+            let message = `Hi! I want to order from Sweet Cravings:\n\n`;
             let total = 0;
             
-            cart.forEach(order => {
-                message += `• ${order.item.name} x${order.qty} = RM ${order.total.toFixed(2)}\n`;
-                total += order.total;
+            cart.forEach(item => {
+                message += `• ${item.name} x${item.qty} = RM ${(item.price * item.qty).toFixed(2)}\n`;
+                total += item.price * item.qty;
             });
             
             message += `\nTotal: RM ${total.toFixed(2)}\n\n`;
-            message += `Name: ${cart[0].customer.name}\n`;
-            message += `Phone: ${cart[0].customer.phone}\n`;
-            message += `Address: ${cart[0].customer.address}`;
+            message += `Please send me payment details. Thank you!`;
             
-            window.open(`https://wa.me/60123456789?text=${encodeURIComponent(message)}`, '_blank');
+            window.open(`https://wa.me/601167470624?text=${encodeURIComponent(message)}`, '_blank');
             
+            showToast('Opening WhatsApp...', 'success');
             cart = [];
             updateCartUI();
             toggleCart();
-            showToast('Redirecting to WhatsApp...');
         }
 
-        function showToast(message) {
+        function showToast(message, type = '') {
             const toast = document.getElementById('toast');
-            toast.textContent = message;
+            toast.className = 'toast ' + type;
+            
+            if (type === 'success') {
+                toast.innerHTML = '<i class="fas fa-check-circle"></i> ' + message;
+            } else if (type === 'error') {
+                toast.innerHTML = '<i class="fas fa-exclamation-circle"></i> ' + message;
+            } else {
+                toast.innerHTML = '<i class="fas fa-info-circle"></i> ' + message;
+            }
+            
             toast.classList.add('show');
             setTimeout(() => toast.classList.remove('show'), 3000);
         }
 
-        // Close modal on outside click
-        document.getElementById('orderModal').addEventListener('click', (e) => {
-            if (e.target === document.getElementById('orderModal')) {
-                closeModal();
-            }
+        document.getElementById('addModal').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('addModal')) closeAddModal();
         });
 
-        // Smooth scroll
+        document.getElementById('checkoutModal').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('checkoutModal')) closeCheckoutModal();
+        });
+
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
