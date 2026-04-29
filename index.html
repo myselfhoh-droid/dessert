@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sweet Cravings - Artisan Desserts</title>
+    <title>The Best Bakery - Artisan Desserts</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -46,7 +46,7 @@
             background: rgba(253, 248, 243, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            padding: 1rem 5%;
+            padding: 0.5rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -54,11 +54,24 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .logo-text {
             font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             font-weight: 700;
             color: var(--primary);
-            text-decoration: none;
         }
 
         .nav-links {
@@ -714,6 +727,14 @@
                 max-width: 300px;
                 justify-content: center;
             }
+
+            .logo-text {
+                font-size: 1.1rem;
+            }
+
+            .logo-img {
+                height: 40px;
+            }
         }
     </style>
 </head>
@@ -722,7 +743,10 @@
     <div class="overlay" id="overlay" onclick="toggleCart()"></div>
 
     <nav>
-        <a href="#" class="logo">🧁 Sweet Cravings</a>
+        <a href="#" class="logo">
+            <img src="logo.png" alt="The Best Bakery" class="logo-img">
+            <span class="logo-text">The Best Bakery</span>
+        </a>
         <div class="nav-links">
             <a href="#menu">Menu</a>
             <a href="#about">About</a>
@@ -809,14 +833,14 @@
 
     <footer>
         <div class="footer-content">
-            <h2 style="font-family: 'Playfair Display', serif; margin-bottom: 1rem;">Sweet Cravings</h2>
+            <h2 style="font-family: 'Playfair Display', serif; margin-bottom: 1rem;">The Best Bakery</h2>
             <p style="margin-bottom: 1.5rem; opacity: 0.8;">Handcrafted desserts for every occasion</p>
             <div class="social-links">
                 <a href="#"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-facebook"></i></a>
                 <a href="#"><i class="fab fa-tiktok"></i></a>
             </div>
-            <p style="font-size: 0.9rem; opacity: 0.6;">© 2026 Sweet Cravings. All rights reserved.</p>
+            <p style="font-size: 0.9rem; opacity: 0.6;">© 2026 The Best Bakery. All rights reserved.</p>
         </div>
     </footer>
 
@@ -1173,7 +1197,7 @@
             
             const orderId = 'SC' + Date.now().toString().slice(-6);
             
-            let message = `🧁 *Sweet Cravings - Order Confirmation* 🧁\n\n`;
+            let message = `🧁 *The Best Bakery - Order Confirmation* 🧁\n\n`;
             message += `*Order ID:* ${orderId}\n`;
             message += `*Payment Method:* ${selectedPayment.toUpperCase()}\n\n`;
             message += `*Customer:* ${name}\n`;
@@ -1193,7 +1217,7 @@
                 message += `*Bank Transfer Details:*\n`;
                 message += `Bank: Maybank\n`;
                 message += `Account: 1234567890\n`;
-                message += `Name: Sweet Cravings Sdn Bhd\n\n`;
+                message += `Name: The Best Bakery Sdn Bhd\n\n`;
                 message += `Please upload your receipt after payment.`;
             } else if (selectedPayment === 'cod') {
                 message += `Please prepare exact change for the rider. Thank you!`;
@@ -1215,7 +1239,7 @@
                 return;
             }
             
-            let message = `Hi! I want to order from Sweet Cravings:\n\n`;
+            let message = `Hi! I want to order from The Best Bakery:\n\n`;
             let total = 0;
             
             cart.forEach(item => {
