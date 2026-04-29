@@ -670,6 +670,22 @@
             color: var(--secondary);
         }
 
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1999;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
+        /* Mobile styles */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.2rem;
@@ -699,21 +715,6 @@
                 justify-content: center;
             }
         }
-
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 1999;
-        }
-
-        .overlay.active {
-            display: block;
-        }
     </style>
 </head>
 <body>
@@ -731,7 +732,7 @@
                 <span class="cart-count" id="cartCount">0</span>
             </div>
         </div>
-        <div class="cart-icon" style="display:none;" id="mobileCart" onclick="toggleCart()">
+        <div class="cart-icon" id="mobileCart" onclick="toggleCart()">
             <i class="fas fa-shopping-bag"></i>
             <span class="cart-count" id="cartCountMobile">0</span>
         </div>
